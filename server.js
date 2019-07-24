@@ -4,20 +4,25 @@ var exphbs = require("express-handlebars");
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var session = require('express-session');
-var mysql = require('mysql')(session);
-
-// Creating connection to mysql database
-var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'app_db'
-});
-// Connection is successful
-connection.connect(function(err) {
-  if (err) throw err
-  console.log('You are now connected');
-});
+var MySQLStore = require('express-mysql-session')(session);
+ // info for connecting to mysql database
+var options = {
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: '',
+    database: 'test_db'
+};
+ 
+var sessionStore = new MySQLStore(options);
+ 
+app.use(session({
+    key: 'session_cookie_name',
+    secret: 'session_cookie_secret',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false
+}));
 
 var db = require("./models");
 
