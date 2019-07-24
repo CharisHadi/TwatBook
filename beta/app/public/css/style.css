@@ -5,15 +5,15 @@
 }
 
 .cool-font {
-  font-family: Shrikhand, cursive;
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
-  color: #1da1f2;
+  color: #3C5A99;
 }
 
 .jumbotron {
-  font-family: Shrikhand, cursive;
+  font-family: 'Montserrat', sans-serif;
   color: white;
-  background-color: #1da1f2;
+  background-color: #3C5A99;
 }
 
 input,
@@ -23,10 +23,10 @@ textarea {
 
 .btn {
   margin: 10px;
-  font-family: Shrikhand, cursive;
-  color: #1da1f2;
+  font-family: 'Montserrat', sans-serif;
+  color: #3C5A99;
   background-color: white;
-  border-color: #1da1f2;
+  border-color: #3C5A99;
   border-style: solid;
   border-width: 2px;
 }
