@@ -1,30 +1,35 @@
-var passport = require('passport')
-var bcrypt = require('bcrypt')
-var LocalStrategy = require('passport-local').Strategy
+// initialize authentication
+var passport = require('passport');
+var bcrypt = require('bcrypt');
+var LocalStrategy = require('passport-local').Strategy;
 
-var authenticationMiddleware = require('./middleware')
+var authenticationMiddleware = require('./middleware');
 
-// Generate Password
-var saltRounds = 10
-var myPlaintextPassword = 'my-password'
-var salt = bcrypt.genSaltSync(saltRounds)
-var passwordHash = bcrypt.hashSync(myPlaintextPassword, salt)
+// generate password
+var saltRounds = 10;
+var myPlaintextPassword = 'password';
+var salt = bcrypt.genSaltSync(saltRounds);
+var passwordHash = bcrypt.hashSync(myPlaintextPassword, salt);
 
+// find user by username
 function findUser (username, callback) {
   if (username === user.username) {
     return callback(null, user)
   }
   return callback(null)
-}
+};
 
+// serialize user
 passport.serializeUser(function (user, cb) {
   cb(null, user.username)
-})
+});
 
+// deserialize user
 passport.deserializeUser(function (username, cb) {
   findUser(username, cb)
-})
+});
 
+// match username and password
 function initPassport () {
   passport.use(new LocalStrategy(
     (username, password, done) => {
@@ -33,13 +38,13 @@ function initPassport () {
           return done(err)
         }
 
-        // User not found
+        // user not found
         if (!user) {
           console.log('User not found')
           return done(null, false)
         }
 
-        // Always use hashed passwords and fixed time comparison
+        // always use hashed passwords
         bcrypt.compare(password, user.passwordHash, (err, isValid) => {
           if (err) {
             return done(err)
@@ -53,7 +58,7 @@ function initPassport () {
     }
   ))
 
-  passport.authenticationMiddleware = authenticationMiddleware
-}
+  passport.authenticationMiddleware = authenticationMiddleware;
+};
 
-module.exports = initPassport
+module.exports = initPassport;

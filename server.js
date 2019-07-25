@@ -1,3 +1,4 @@
+// dependencies
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
@@ -5,6 +6,7 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
+
  // info for connecting to mysql database
 var options = {
     host: 'localhost',
@@ -13,7 +15,7 @@ var options = {
     password: '',
     database: 'test_db'
 };
- 
+
 var sessionStore = new MySQLStore(options);
  
 app.use(session({
@@ -33,13 +35,15 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+
+// middleware for Passport.js
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-// Passport JS authentication
+// require Passport.js authentication
 require('./authentication').init(app);
 
 // Handlebars
