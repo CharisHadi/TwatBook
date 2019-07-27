@@ -7,6 +7,14 @@ var passport = require('passport');
 var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 
+// process.env keys and values defined in our .env file for db
+var db = require('db')
+db.connect({
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS
+})
+
  // info for connecting to mysql database
 var options = {
     host: 'localhost',
@@ -26,7 +34,8 @@ app.use(session({
     saveUninitialized: false
 }));
 
-var db = require("./models");
+// reference line 19 (this code is from boiler plate).
+// var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
