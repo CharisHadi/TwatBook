@@ -19,7 +19,7 @@ $("#post-submit").on("click", function(event) {
     .then(function() {
 
       var row = $("<div>");
-      row.addClass("chirp");
+      row.addClass("post");
 
       row.append("<p>" + newPost.username + " posted: </p>");
       row.append("<p>" + newPost.body + "</p>");
