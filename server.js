@@ -10,7 +10,7 @@ var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 
 // process.env keys and values defined in our .env file
-var options = require('db')
+var options = require('db');
 db.connect({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
