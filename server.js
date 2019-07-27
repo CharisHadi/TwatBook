@@ -10,11 +10,13 @@ var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 
 // process.env keys and values defined in our .env file
-var db = require('db')
+var options = require('db')
 db.connect({
   host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
   username: process.env.DB_USER,
-  password: process.env.DB_PASS
+  password: process.env.DB_PASS,
+  database: process.env.DB_DATA
 });
 
 // config will read the .env file and assign it to process.env
@@ -26,7 +28,8 @@ if (result.error) {
 }
 console.log(result.parsed);
 
- // info for connecting to mysql database
+// info for connecting to mysql database (same as process.env)
+/*
 var options = {
     host: 'localhost',
     port: 3306,
@@ -34,6 +37,7 @@ var options = {
     password: '',
     database: 'test_db'
 };
+*/
 
 // session store will create a mysql connection pool which handles the connection to the database
 var sessionStore = new MySQLStore(options);
@@ -47,7 +51,7 @@ app.use(session({
 }));
 
 // reference line 19 (this code is from boiler plate).
-// var db = require("./models");
+var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
