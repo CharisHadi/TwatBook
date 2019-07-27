@@ -11,6 +11,13 @@ var myPlaintextPassword = 'password';
 var salt = bcrypt.genSaltSync(saltRounds);
 var passwordHash = bcrypt.hashSync(myPlaintextPassword, salt);
 
+// test user password hashing
+var user = {
+  username: 'test-user',
+  passwordHash,
+  id: 1
+};
+
 // find user by username
 function findUser (username, callback) {
   if (username === user.username) {
