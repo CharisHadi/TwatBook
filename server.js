@@ -15,7 +15,16 @@ db.connect({
   host: process.env.DB_HOST,
   username: process.env.DB_USER,
   password: process.env.DB_PASS
-})
+});
+
+// config will read the .env file and assign it to process.env
+// config will return an Object with a parsed key containing the loaded content or an error key if it failed
+var result = dotenv.config()
+ 
+if (result.error) {
+  throw result.error
+}
+console.log(result.parsed);
 
  // info for connecting to mysql database
 var options = {
@@ -55,7 +64,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 
-// require Passport.js authentication
+// require Passport.js authentication folder
 require('./authentication').init(app);
 
 // Handlebars
