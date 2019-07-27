@@ -1,5 +1,7 @@
-// dependencies
+// loads environment variables from a .env file into process.env
 require("dotenv").config();
+
+// dependencies
 var express = require("express");
 var exphbs = require("express-handlebars");
 var bodyParser = require('body-parser');
@@ -7,7 +9,7 @@ var passport = require('passport');
 var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 
-// process.env keys and values defined in our .env file for db
+// process.env keys and values defined in our .env file
 var db = require('db')
 db.connect({
   host: process.env.DB_HOST,
@@ -24,6 +26,7 @@ var options = {
     database: 'test_db'
 };
 
+// session store will create a mysql connection pool which handles the connection to the database
 var sessionStore = new MySQLStore(options);
  
 app.use(session({
@@ -40,7 +43,7 @@ app.use(session({
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-// Middleware
+// middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
