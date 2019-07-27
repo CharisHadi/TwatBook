@@ -1,0 +1,14 @@
+<div class="container">
+    <ul>
+        {{#each friendId}}
+        <li>
+            <h4>{{friendName}}:</h4>
+            <button class="btn btn-primary btn-outline-submit my-2 my-sm-0" type="submit">Message</button>
+        </li>
+        {{/each}}
+    </ul>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1"></label>
+        <textarea class="form-control" id="userResponse" rows="2"></textarea>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 var db = require("../models");
-
+const request = require("request");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
@@ -16,6 +16,15 @@ module.exports = function(app) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
       res.render("example", {
         example: dbExample
+      });
+    });
+  });
+
+ // Handlebars Routes
+  app.get('/', function(req, res){
+    request("http://localhost:300/main", function (err, resp, body){
+      res.render("main", {
+        posts: JSON.parse(body)
       });
     });
   });
