@@ -1,0 +1,15 @@
+<div class="container">
+    <ul>
+        {{#each messageId}}
+        <li>
+            <h4>{{sender}}:</h4>
+            <p>{{directMessage}} - {{timestamp}}</p>
+        </li>
+        {{/each}}
+    </ul>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1"></label>
+        <textarea class="form-control" id="userResponse" rows="2"></textarea>
+        <button class="btn btn-primary btn-outline-submit my-2 my-sm-0" type="submit">Send</button>
+    </div>
+</div>

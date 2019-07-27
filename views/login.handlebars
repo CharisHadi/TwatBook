@@ -1,0 +1,17 @@
+
+{{>nav}}
+<div class="container">
+    <form id="login-form">            
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="John Smith" required="required">        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required="required">       
+        <label for="password">Password:</label>
+        <input id="password" name="password" placeholder="Password" required="required">  
+        <br>
+        <input type="submit">
+    </form>
+</div>
+
+<!-- Reroutes user back to feed if they do not wish to login-->
+<a class="noLoginLink" href="views/layouts/main.handlebars">Continue without logging in</a>

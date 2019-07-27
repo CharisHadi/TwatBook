@@ -75,19 +75,24 @@ app.use(bodyParser.urlencoded({
 require('./authentication').init(app);
 
 // Handlebars
+app.set("view engine", "handlebars");
+
 app.engine(
   "handlebars",
   exphbs({
-    defaultLayout: "main"
+    extname: exphbs,
+    defaultLayout: "main",
+    layoutsDir: __dirname + 'views/layouts',
+    partialsDir: __dirname + 'views/partials'
   })
 );
-app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
+
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
