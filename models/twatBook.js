@@ -5,7 +5,7 @@ var sequelize = require("../config/connection.js");
 
 // Creates a "Messages" model that matches up with DB
 var Messages = sequelize.define("messages", {
-  author: Sequelize.STRING,
+  username: Sequelize.STRING,
   body: Sequelize.STRING,
   created_at: Sequelize.DATE
 });
