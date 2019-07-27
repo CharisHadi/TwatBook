@@ -28,8 +28,10 @@ if (result.error) {
 }
 console.log(result.parsed);
 
-// info for connecting to mysql database (same as process.env)
+
 /*
+// info for connecting to mysql database (same as process.env)
+
 var options = {
     host: 'localhost',
     port: 3306,
@@ -37,6 +39,7 @@ var options = {
     password: '',
     database: 'test_db'
 };
+
 */
 
 // session store will create a mysql connection pool which handles the connection to the database
