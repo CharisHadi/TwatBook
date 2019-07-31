@@ -1,25 +1,187 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>TwatBook</title>
-        <link rel="icon" type="image/png" href="favicon.ico">
-        
-        <!-- *** Links & CDNs *** -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link type="text/css" rel="stylesheet" href="styles/styles.css">
-        <script src="handlebars-v4.1.2.js"></script>
-    </head>
 
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="title navbar-brand">TwatBook</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-primary btn-outline-submit my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </nav>
+<head>
+    <title>twatbook</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
 
-    <body>
-        {{{feed}}}
-    </body>
+    <!-- *** Links & CDNs *** -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway+Dots|Varela+Round&display=swap"
+        rel="stylesheet">
+    <script src="handlebars-v4.1.2.js"></script>
+</head>
+
+<nav class="navbar navbar-dark bg-dark">
+    <img src="../assets/images/twat-icon.png" style="width: 2%;">
+    <a class="title navbar-brand"
+        style="color: white; font-family: 'Varela Round', sans-serif; position: fixed; left: 4%;">twatbook</a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+            style="margin-bottom: 0px;">
+        <button class="btn btn-primary btn-outline-submit my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+
+<body>
+    <img src="../assets/images/chatico.png" style="width: 10%; position: fixed; right: 10px; bottom: 10px; ">
+    <!-- {{{feed}}} -->
+
+    <div id="feed" style="position: fixed; top: 15%; left: 20%; width: 60%; height: 80%;overflow-y: scroll;">
+
+        <!-- post div -->
+        <div class="post" style="position: relative; margin: 50px 10px;">
+            <!-- egg div -->
+            <div class="egg"
+                style="display:inline-block; width: 60px; height: 90px; background-color:deepskyblue; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; border: solid 1px gray;">
+
+            </div>
+            <!-- message box -->
+            <div class="message"
+                style="position: absolute; display: inline-block; width: 90%; height: 80%; border: solid 1px gray;; z-index: -1; background-color: lightskyblue; left: 5%; top: 10%;">
+                <div
+                    style="position: absolute; display: inline-block; width: 90%; height: 80%; background-color: lightskyblue; left:10%; top: 10%; font-family: 'Varela Round', sans-serif;">
+                    It is so cool to be here, you don't even know.
+                </div>
+            </div>
+            <!-- name -->
+            <div class="name" style="position: absolute; top: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                Nick Meyers
+            </div>
+            <div class="name" style="position: absolute; bottom: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                11:15:32 PM, 07/30/3019
+            </div>
+            <!-- time/date stamp -->
+        </div>
+
+        <div class="post" style="position: relative; margin: 50px 10px;">
+            <!-- egg div -->
+            <div class="egg"
+                style="display:inline-block; width: 60px; height: 90px; background-color:deepskyblue; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; border: solid 1px gray;">
+
+            </div>
+            <!-- message box -->
+            <div class="message"
+                style="position: absolute; display: inline-block; width: 90%; height: 80%; border: solid 1px gray;; z-index: -1; background-color: lightskyblue; left: 5%; top: 10%;">
+                <div
+                    style="position: absolute; display: inline-block; width: 90%; height: 80%; background-color: lightskyblue; left:10%; top: 10%; font-family: 'Varela Round', sans-serif;">
+                    These hands are small I know, but they're not yours - they are my own.
+                </div>
+            </div>
+            <!-- name -->
+            <div class="name" style="position: absolute; top: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                Andrew LastName
+            </div>
+            <div class="name" style="position: absolute; bottom: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                09:46:32 PM, 07/30/3019
+            </div>
+            <!-- time/date stamp -->
+        </div>
+
+        <div class="post" style="position: relative; margin: 50px 10px;">
+            <!-- egg div -->
+            <div class="egg"
+                style="display:inline-block; width: 60px; height: 90px; background-color:deepskyblue; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; border: solid 1px gray;">
+
+            </div>
+            <!-- message box -->
+            <div class="message"
+                style="position: absolute; display: inline-block; width: 90%; height: 80%; border: solid 1px gray;; z-index: -1; background-color: lightskyblue; left: 5%; top: 10%;">
+                <div
+                    style="position: absolute; display: inline-block; width: 90%; height: 80%; background-color: lightskyblue; left:10%; top: 10%; font-family: 'Varela Round', sans-serif;">
+                    You're my butterfly, sugar, baby.
+                </div>
+            </div>
+            <!-- name -->
+            <div class="name" style="position: absolute; top: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                Dakota LastName
+            </div>
+            <div class="name" style="position: absolute; bottom: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                12:46:32 PM, 07/30/3019
+            </div>
+            <!-- time/date stamp -->
+        </div>
+
+        <div class="post" style="position: relative; margin: 50px 10px;">
+            <!-- egg div -->
+            <div class="egg"
+                style="display:inline-block; width: 60px; height: 90px; background-color:deepskyblue; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; border: solid 1px gray;">
+
+            </div>
+            <!-- message box -->
+            <div class="message"
+                style="position: absolute; display: inline-block; width: 90%; height: 80%; border: solid 1px gray;; z-index: -1; background-color: lightskyblue; left: 5%; top: 10%;">
+                <div
+                    style="position: absolute; display: inline-block; width: 90%; height: 80%; background-color: lightskyblue; left:10%; top: 10%; font-family: 'Varela Round', sans-serif;">
+                    You're all I've ever wanted (baby), you're all I've ever needed (ye-ahh), so tell me what to do now,
+                    when I want - you - back.
+                </div>
+            </div>
+            <!-- name -->
+            <div class="name" style="position: absolute; top: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                Charis Hadi
+            </div>
+            <div class="name" style="position: absolute; bottom: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                09:46:32 AM, 07/28/3019
+            </div>
+            <!-- time/date stamp -->
+        </div>
+
+        <div class="post" style="position: relative; margin: 50px 10px;">
+            <!-- egg div -->
+            <div class="egg"
+                style="display:inline-block; width: 60px; height: 90px; background-color:deepskyblue; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; border: solid 1px gray;">
+
+            </div>
+            <!-- message box -->
+            <div class="message"
+                style="position: absolute; display: inline-block; width: 90%; height: 80%; border: solid 1px gray;; z-index: -1; background-color: lightskyblue; left: 5%; top: 10%;">
+                <div
+                    style="position: absolute; display: inline-block; width: 90%; height: 80%; background-color: lightskyblue; left:10%; top: 10%; font-family: 'Varela Round', sans-serif;">
+                    I try to say goodbye and I choke. Try to walk away and I stumble.
+                </div>
+            </div>
+            <!-- name -->
+            <div class="name" style="position: absolute; top: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                Nick Meyers
+            </div>
+            <div class="name" style="position: absolute; bottom: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                05:46:32 AM, 07/21/2019
+            </div>
+            <!-- time/date stamp -->
+        </div>
+
+        <div class="post" style="position: relative; margin: 50px 10px;">
+            <!-- egg div -->
+            <div class="egg"
+                style="display:inline-block; width: 60px; height: 90px; background-color:deepskyblue; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; border: solid 1px gray;">
+
+            </div>
+            <!-- message box -->
+            <div class="message"
+                style="position: absolute; display: inline-block; width: 90%; height: 80%; border: solid 1px gray;; z-index: -1; background-color: lightskyblue; left: 5%; top: 10%;">
+                <div
+                    style="position: absolute; display: inline-block; width: 90%; height: 80%; background-color: lightskyblue; left:10%; top: 10%; font-family: 'Varela Round', sans-serif;">
+                    Take me out to the ballgame, take me out to the crowd.
+                </div>
+            </div>
+            <!-- name -->
+            <div class="name" style="position: absolute; top: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                Charis Hadi
+            </div>
+            <div class="name" style="position: absolute; bottom: -10px; left: 50px; font-family: 'Lobster', cursive;">
+                02:46:32 AM, 07/09/2019
+            </div>
+            <!-- time/date stamp -->
+        </div>
+
+    </div>
+
+    <!-- remove email and add header to login page -->
+    <!-- sign up button / sign up page if get to it -->
+
+</body>
 
 </html>
