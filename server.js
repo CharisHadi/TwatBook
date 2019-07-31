@@ -1,5 +1,5 @@
 // loads environment variables from a .env file into process.env
-require("dotenv").config();
+var data = require("dotenv").config();
 
 // dependencies
 var express = require("express");
@@ -13,7 +13,7 @@ var db = require("./models");
 
 // config will read the .env file and assign it to process.env
 // config will return an Object with a parsed key containing the loaded content or an error key if it failed
-var data = require('data')
+
 data.connect({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -26,7 +26,9 @@ data.connect({
 var sessionStore = new MySQLStore(data);
 
 // process.env keys and values defined in our .env file
+
 /*
+
 var options = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -34,6 +36,7 @@ var options = {
   password: process.env.DB_PASS,
   database: process.env.DB_DATA
 };
+
 */
  
 app.use(session({
