@@ -8,6 +8,9 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
+// reference line 19 (this code is from boiler plate).
+var db = require("./models");
+
 
 // process.env keys and values defined in our .env file
 var options = require('db');
@@ -29,18 +32,6 @@ if (result.error) {
 console.log(result.parsed);
 
 
-/*
-// info for connecting to mysql database (same as process.env)
-
-var options = {
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: '',
-    database: 'test_db'
-};
-
-*/
 
 // session store will create a mysql connection pool which handles the connection to the database
 var sessionStore = new MySQLStore(options);
@@ -53,8 +44,7 @@ app.use(session({
     saveUninitialized: false
 }));
 
-// reference line 19 (this code is from boiler plate).
-var db = require("./models");
+
 
 var app = express();
 var PORT = process.env.PORT || 3000;
