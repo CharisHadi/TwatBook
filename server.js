@@ -16,7 +16,7 @@ var db = require("./models");
 var options = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
-  username: process.env.DB_USER,
+  user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_DATA
 };
@@ -40,8 +40,6 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-
-
 
 var app = express();
 var PORT = process.env.PORT || 3000;
