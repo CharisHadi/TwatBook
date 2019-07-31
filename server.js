@@ -16,7 +16,7 @@ var db = require("./models");
 var options = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
-  username: process.env.DB_USER,
+  user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_DATA
 };
@@ -24,6 +24,15 @@ var options = {
 // config will read the .env file and assign it to process.env
 // config will return an Object with a parsed key containing the loaded content or an error key if it failed
 var result = dotenv.config()
+
+var data = require('data')
+data.connect({
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_DATA
+})
  
 if (result.error) {
   throw result.error
