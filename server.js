@@ -23,9 +23,10 @@ data.connect({
 })
 
 // session store will create a mysql connection pool which handles the connection to the database
-var sessionStore = new MySQLStore(options);
+var sessionStore = new MySQLStore(data);
 
 // process.env keys and values defined in our .env file
+/*
 var options = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -33,6 +34,7 @@ var options = {
   password: process.env.DB_PASS,
   database: process.env.DB_DATA
 };
+*/
  
 app.use(session({
     key: 'session_cookie_name',
