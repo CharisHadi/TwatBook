@@ -1,3 +1,27 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.container {
+  width: 300px;
+  clear: both;
+}
+
+.container input {
+  width: 100%;
+  clear: both;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.noLoginLink {
+  text-align: center;
+  width: 300px;
+  clear: both;
+}
