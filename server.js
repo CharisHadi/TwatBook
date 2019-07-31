@@ -13,14 +13,13 @@ var db = require("./models");
 
 
 // process.env keys and values defined in our .env file
-var options = require('db');
-db.connect({
+var options = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   username: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_DATA
-});
+};
 
 // config will read the .env file and assign it to process.env
 // config will return an Object with a parsed key containing the loaded content or an error key if it failed
@@ -30,8 +29,6 @@ if (result.error) {
   throw result.error
 }
 console.log(result.parsed);
-
-
 
 // session store will create a mysql connection pool which handles the connection to the database
 var sessionStore = new MySQLStore(options);
