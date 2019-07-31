@@ -14,14 +14,47 @@
 
 h1 {
   text-align: center;
+  margin-top: 10px;
 }
 
 h2 {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .noLoginLink {
   text-align: center;
-  width: 300px;
+  width: 100%;
   clear: both;
+}
+
+#logo {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 15%;
+}
+
+.header{
+  font-family: 'Varela Round', sans-serif;
+  color:darkblue;
+  font-size: 48px;
+}
+
+input {
+  font-family: 'Lobster', cursive;
+  color: darkblue;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+label {
+  font-family: 'Lobster', cursive;
+}
+
+.my-wrap {
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+  text-align: center;  
+  font-family: 'Raleway Dots', cursive;
 }
