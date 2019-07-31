@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Socket.IO chat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            font: 13px Helvetica, Arial;
+            height: 100%;
+        }
+
+        form {
+            background: #000;
+            padding: 3px;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            float: right;
+        }
+
+        form input {
+            border: 0;
+            padding: 10px;
+            width: 90%;
+            margin-right: .5%;
+        }
+
+        form button {
+            width: 9%;
+            background: rgb(130, 224, 255);
+            border: none;
+            padding: 10px;
+        }
+
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        #messages li {
+            padding: 5px 10px;
+        }
+
+        #messages li:nth-child(odd) {
+            background: #eee;
+        }
+
+        #friends-list {
+            position: relative;
+            left: 0px;
+            width: 10%;
+            height: 100%;
+            border-right: solid black 3px;  
+        }
+
+        .friend:hover {
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <ul id="messages"></ul>
+    <form action="">
+        <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+        //on click of friend class, establish a socket connection that only you and the selected friend can see
+        //pull archived messages from database
+        $(function() {
+            var socket = io();
+            $('form').submit(function(e) {
+                e.preventDefault();
+                socket.emit('chat message', $('#m').val());
+                $('#m').val('');
+                return false;
+            });
+            socket.on('chat message', function(msg){
+                $('#messages').append($('<li>').text(msg));
+            })
+
+        });
+    </script>
+</body>
+
+</html>

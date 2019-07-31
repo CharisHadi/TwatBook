@@ -11,30 +11,33 @@ var MySQLStore = require('express-mysql-session')(session);
 // reference line 19 (this code is from boiler plate).
 var db = require("./models");
 
-
-// process.env keys and values defined in our .env file
-var options = require('db');
+// config will read the .env file and assign it to process.env
+// config will return an Object with a parsed key containing the loaded content or an error key if it failed
+var db = require('db')
 db.connect({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
-  username: process.env.DB_USER,
+  user: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_DATA
-});
-
-// config will read the .env file and assign it to process.env
-// config will return an Object with a parsed key containing the loaded content or an error key if it failed
-var result = dotenv.config()
- 
-if (result.error) {
-  throw result.error
-}
-console.log(result.parsed);
-
-
+})
 
 // session store will create a mysql connection pool which handles the connection to the database
-var sessionStore = new MySQLStore(options);
+var sessionStore = new MySQLStore(data);
+
+// process.env keys and values defined in our .env file
+
+/*
+
+var options = {
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_DATA
+};
+
+*/
  
 app.use(session({
     key: 'session_cookie_name',
