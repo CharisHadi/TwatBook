@@ -1,14 +1,25 @@
 {
-  "name": "directmessage",
+  "name": "node-handlebars-boilerplate",
   "version": "1.0.0",
-  "description": "",
-  "main": "dm.js",
+  "description": "Project 2 Starter",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
+    "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
   },
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.2",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-mysql-session": "^2.1.0",
+    "express-session": "^1.16.2",
+    "mysql2": "^1.6.5",
+    "passport": "^0.4.0",
+    "sequelize": "^5.8.6",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
@@ -23,6 +34,5 @@
   },
   "engines": {
     "node": "v10.15.3"
-  },
-  "author": ""
+  }
 }
