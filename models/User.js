@@ -1,6 +1,6 @@
-  var User = sequelize.define("Example", {
+  var User = sequelize.define("User", {
     userName: DataTypes.STRING,
     password: DataTypes.STRING
   });
 
-  module.exports = User
+  module.exports = User;
