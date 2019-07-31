@@ -11,7 +11,7 @@ var MySQLStore = require('express-mysql-session')(session);
 // reference line 19 (this code is from boiler plate).
 var db = require("./models");
 
-
+/* 
 // process.env keys and values defined in our .env file
 var options = {
   host: process.env.DB_HOST,
@@ -20,7 +20,7 @@ var options = {
   password: process.env.DB_PASS,
   database: process.env.DB_DATA
 };
-
+ */
 // config will read the .env file and assign it to process.env
 // config will return an Object with a parsed key containing the loaded content or an error key if it failed
 var result = dotenv.config()
