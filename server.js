@@ -1,5 +1,5 @@
 // loads environment variables from a .env file into process.env
-var data = require("dotenv").config();
+require("dotenv").config();
 
 // dependencies
 var express = require("express");
@@ -13,8 +13,8 @@ var db = require("./models");
 
 // config will read the .env file and assign it to process.env
 // config will return an Object with a parsed key containing the loaded content or an error key if it failed
-
-data.connect({
+var db = require('db')
+db.connect({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   user: process.env.DB_USER,
