@@ -1,6 +1,3 @@
-// loads environment variables from a .env file into process.env
-require("dotenv").config();
-
 // dependencies
 var express = require("express");
 var exphbs = require("express-handlebars");
@@ -11,45 +8,27 @@ var MySQLStore = require('express-mysql-session')(session);
 // reference line 19 (this code is from boiler plate).
 var db = require("./models");
 
-// config will read the .env file and assign it to process.env
-// config will return an Object with a parsed key containing the loaded content or an error key if it failed
-var db = require('db')
-db.connect({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_DATA
-})
-
 // session store will create a mysql connection pool which handles the connection to the database
-var sessionStore = new MySQLStore(data);
-
-// process.env keys and values defined in our .env file
-
-/*
+var sessionStore = new MySQLStore(options);
 
 var options = {
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_DATA
+  host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT || '8080',
+  user: process.env.DB_USER || 'root',
+  password: process.env.DB_PASS || 'password',
+  database: process.env.DB_DATA || 'database'
 };
 
-*/
- 
+var app = express();
+
 app.use(session({
-    key: 'session_cookie_name',
-    secret: 'session_cookie_secret',
-    store: sessionStore,
-    resave: false,
-    saveUninitialized: false
+  key: 'session_cookie_name',
+  secret: 'session_cookie_secret',
+  store: sessionStore,
+  resave: false,
+  saveUninitialized: false
 }));
 
-
-
-var app = express();
 var PORT = process.env.PORT || 3000;
 
 // middleware
