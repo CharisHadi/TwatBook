@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>twatbook</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <!-- *** Links & CDNs *** -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Raleway+Dots|Varela+Round&display=swap"
+        rel="stylesheet">
+    <script src="handlebars-v4.1.2.js"></script>
+</head>
+
+<nav class="navbar navbar-dark bg-dark">
+    <img src="../assets/images/twat-icon.png" style="width: 2%;">
+    <a class="title navbar-brand"
+        style="color: white; font-family: 'Varela Round', sans-serif; position: fixed; left: 4%;">twatbook</a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+            style="margin-bottom: 0px;">
+        <button class="btn btn-primary btn-outline-submit my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+
+<body>
+    <img src="../assets/images/feedico.png"
+        style="width: 10%; position: fixed; right: 10px; bottom: 10px; overflow-y: scroll;">
+
+
+    <div id="friends-list"
+        style="position: fixed; top: 54px; left: 0px; width: 25%; height: calc(100% - 54px); overflow-y: scroll;">
+
+
+        <!-- friend -->
+        <div class="message"
+            style="position: relative; width: 100%; height: 15%; border: solid 1px gray; overflow: hidden;">
+
+            <div
+                style="position: relative; display: flex; width: 100%; height: 100%; font-family: 'Lobster', cursive; font-size: 28px; text-align: center; vertical-align: middle; margin: auto;">
+                <p style="margin: auto;">Nick Meyers</p>
+            </div>
+
+        </div>
+
+        <!-- friend -->
+        <div class="message"
+            style="position: relative; width: 100%; height: 15%; border: solid 1px gray; overflow: hidden; ">
+
+            <div
+                style="position: relative; display: flex; width: 100%; height: 100%; font-family: 'Lobster', cursive; font-size: 28px; text-align: center; vertical-align: middle; margin: auto;">
+                <p style="margin: auto;">Dakota Stuart</p>
+            </div>
+
+        </div>
+
+        <!-- friend -->
+        <div class="message"
+            style="position: relative; width: 100%; height: 15%; border: solid 1px gray; overflow: hidden;">
+
+            <div
+                style="position: relative; display: flex; width: 100%; height: 100%; font-family: 'Lobster', cursive; font-size: 28px; text-align: center; vertical-align: middle; margin: auto;">
+                <p style="margin: auto;">Andrew Eldenburg</p>
+            </div>
+
+        </div>
+
+        <!-- friend -->
+        <div class="message"
+            style="position: relative; width: 100%; height: 15%; border: solid 1px gray; overflow: hidden;">
+
+            <div
+                style="position: relative; display: flex; width: 100%; height: 100%; font-family: 'Lobster', cursive; font-size: 28px; text-align: center; vertical-align: middle; margin: auto;">
+                <p style="margin: auto;">Charis Hadi</p>
+            </div>
+
+        </div>
+
+        <!-- friend -->
+        <div class="message"
+            style="position: relative; width: 100%; height: 15%; border: solid 1px gray; overflow: hidden;">
+
+            <div
+                style="position: relative; display: flex; width: 100%; height: 100%; font-family: 'Lobster', cursive; font-size: 28px; text-align: center; vertical-align: middle; margin: auto;">
+                <p style="margin: auto;">Luke Skywalker</p>
+            </div>
+
+        </div>
+
+        <!-- friend -->
+        <div class="message"
+            style="position: relative; width: 100%; height: 15%; border: solid 1px gray; overflow: hidden;">
+
+            <div
+                style="position: relative; display: flex; width: 100%; height: 100%; font-family: 'Lobster', cursive; font-size: 28px; text-align: center; vertical-align: middle; margin: auto;">
+                <p style="margin: auto;">J.R.R. Martin</p>
+            </div>
+
+        </div>
+
+        <!-- friend -->
+        <div class="message"
+            style="position: relative; width: 100%; height: 15%; border: solid 1px gray; overflow: hidden;">
+
+            <div
+                style="position: relative; display: flex; width: 100%; height: 100%; font-family: 'Lobster', cursive; font-size: 28px; text-align: center; vertical-align: middle; margin: auto;">
+                <p style="margin: auto;">Shel Silverstein</p>
+            </div>
+
+        </div>
+
+        <!-- friend -->
+        <div class="message"
+            style="position: relative; width: 100%; height: 15%; border: solid 1px gray; overflow: hidden;">
+
+            <div
+                style="position: relative; display: flex; width: 100%; height: 100%; font-family: 'Lobster', cursive; font-size: 28px; text-align: center; vertical-align: middle; margin: auto;">
+                <p style="margin: auto;">Joe Jonas</p>
+            </div>
+
+        </div>
+
+        <!-- friend -->
+        <div class="message"
+            style="position: relative; width: 100%; height: 15%; border: solid 1px gray; overflow: hidden;">
+
+            <div
+                style="position: relative; display: flex; width: 100%; height: 100%; font-family: 'Lobster', cursive; font-size: 28px; text-align: center; vertical-align: middle; margin: auto;">
+                <p style="margin: auto;">Lance Bass</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="convo"
+        style="position: fixed; top: 54px; right: 0px; width: 75%; height: calc(100% - 54px); overflow-y: scroll;">
+        <!-- message area -->
+        <div id="feed" style="position: fixed; top: 20%; left: 45%; width: 30%; height: 70%; overflow-y: scroll; background-color:lightskyblue;">
+            <!-- message list MOST RECENT ON TOP NEED TO APPEND TO TOP -->
+            <ul style="list-style-type: none; font-family: 'Varela Round', sans-serif; padding-left: 0;">
+                <li class="you">oh wow gr8 can i have sum</li>
+                <li class="me">Great, I just won the lottery.</li>
+                <li class="you">i m doin well, u?</li>
+                <li class="me">How's it going?</li>
+                <li class="me">Hey!</li>
+            </ul>
+        </div>
+        <!-- input field and send button -->
+        <form class="form-inline" style="margin: 25px;">
+            <input class="form-control mr-sm-2" type="search" placeholder="Send 'em that message" aria-label="Search"
+                style="margin-bottom: 0px; width: calc(100% - 75px)">
+            <button class="btn btn-primary btn-outline-submit my-2 my-sm-0" type="submit">Send</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

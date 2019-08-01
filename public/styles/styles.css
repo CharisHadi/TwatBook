@@ -58,3 +58,17 @@ label {
   text-align: center;  
   font-family: 'Raleway Dots', cursive;
 }
+
+.message:hover {
+  background-color: rgb(29, 202, 255);
+}
+
+.me{
+  text-align: right;
+  color: whitesmoke;
+}
+
+.you{
+  text-align: left;
+  color: darkblue;
+}
